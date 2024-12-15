@@ -1,0 +1,12 @@
+.menu_links {
+  li {
+    text-shadow: 0 0 #ffc82200;
+    transition: all;
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+
+    &:hover {
+      text-shadow: 0.2rem -0.2rem #ffffff50;
+    }
+  }
+}
