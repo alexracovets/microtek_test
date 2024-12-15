@@ -14,6 +14,7 @@
 @layer base {
   :root {
     box-sizing: border-box;
+    line-height: 1;
   }
 }
 
@@ -21,11 +22,11 @@ html {
   scroll-behavior: smooth;
   font-size: calc(100vw / 1440 * 10);
 
-  @media (max-width: $tablet) {
-    font-size: calc(100vw / 837 * 10);
-  }
+  // @media (max-width: $tablet) {
+  //   font-size: calc(100vw / 837 * 10);
+  // }
 
-  @media (max-width: $mobile) {
-    font-size: calc(100vw / 375 * 10);
-  }
+  // @media (max-width: $mobile) {
+  //   font-size: calc(100vw / 375 * 10);
+  // }
 }

@@ -6,7 +6,7 @@ import { Header } from "@/components/shared";
 import "./globals.scss";
 
 const tektur = Tektur({
-  weight: ["500", "600"],
+  weight: ["400", "500", "600"],
   variable: '--font-tektur',
   style: ['normal'],
   subsets: ['cyrillic'],
