@@ -1,6 +1,5 @@
 .menu_links {
   a {
-    text-shadow: 0.1rem -0.1rem #a52a2a00;
     transition: all;
     transition-timing-function: ease-out;
     transition-duration: 300ms;
@@ -8,8 +7,6 @@
     position: relative;
 
     &:hover {
-      text-shadow: 0.1rem -0.1rem #a52a2a;
-
       &::before {
         font-weight: 700;
       }
@@ -28,11 +25,6 @@
       transition: all;
       transition-timing-function: ease-out;
       transition-duration: 300ms;
-      will-change: contents;
-    }
-
-    &::after {
-      text-shadow: 0 0 4px rgb(255 255 255);
       will-change: contents;
     }
   }
