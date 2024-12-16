@@ -3,8 +3,9 @@
 import { VideoText } from "@/components/shared/scene/videoText";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import { NoToneMapping } from "three";
 
-export const Scene = () => {
+const Scene = () => {
 
     const devicePixelRatio = typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 2) : 1;
 
@@ -13,8 +14,10 @@ export const Scene = () => {
 
             <Canvas
                 dpr={devicePixelRatio}
-                gl={{ alpha: true }}
+                gl={{ antialias: true, preserveDrawingBuffer: true, toneMapping: NoToneMapping }}
                 camera={{ position: [0, 3, 100], fov: 60 }}
+                onCreated={({ gl }) => { gl.toneMapping = NoToneMapping }}
+                flat
             >
                 <Suspense fallback={null}>
                     <ambientLight intensity={0.5} />
@@ -28,3 +31,5 @@ export const Scene = () => {
         </div>
     );
 };
+
+export default Scene;

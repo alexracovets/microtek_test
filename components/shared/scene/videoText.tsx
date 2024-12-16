@@ -1,25 +1,18 @@
 "use client";
 
 import { Text } from "@react-three/drei";
-import { useEffect, useState } from "react";
+import { useEffect  } from "react";
 import { InfoText } from "./infoText";
-
+import { useContentStore } from "@/store/useContentStore";
 export const VideoText = () => {
     const fontsChakraPetch = "/fonts/ChakraPetch-Bold.ttf";
-    const colorRed = "#A52A2A";
+    const colorRed = "#A52A2A"; 
+    const { video } = useContentStore();
 
-    const [video] = useState(() =>
-        Object.assign(document.createElement('video'), {
-            src: '/drei.mp4',
-            crossOrigin: 'Anonymous',
-            loop: true,
-            muted: true,
-        })
-    );
 
     useEffect(() => {
         video.play();
-    }, [video]);
+    }, []);
 
     return (
         <>

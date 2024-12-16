@@ -37,8 +37,7 @@ export const HeaderNavigationLink = ({ link, handleMouseEnter }: LinkType) => {
                 id={link.id}
                 className={cn(
                     "relative inline-block p-[1rem] text-transparent",
-                    "before:absolute before:content-[attr(data-text)] before:left-0 before:top-0 before:w-full before:h-full",
-                    "before:flex before:justify-center before:items-center hover:before:font-[700] before:text-regal_white",
+                    "before:content-[attr(data-text)] before:text-regal_white",
                     "hover:before:text-regal_yellow",
                     currentPage === link.id ? "before:text-regal_yellow before:font-[700]" : ""
                 )}

@@ -5,15 +5,34 @@
     transition-timing-function: ease-out;
     transition-duration: 300ms;
     will-change: contents;
+    position: relative;
 
     &:hover {
-      text-shadow: 0.1rem -0.1rem #A52A2A;
+      text-shadow: 0.1rem -0.1rem #a52a2a;
+
+      &::before {
+        font-weight: 700;
+      }
     }
 
     &::before {
+      position: absolute;
+      content: attr(data-text);
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: all;
       transition-timing-function: ease-out;
       transition-duration: 300ms;
+      will-change: contents;
+    }
+
+    &::after {
+      text-shadow: 0 0 4px rgb(255 255 255);
       will-change: contents;
     }
   }

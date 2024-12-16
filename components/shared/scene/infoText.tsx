@@ -13,7 +13,7 @@ export const InfoText = ({ children, isSub }: InfoTextType) => {
     const fontSize = 10;
     const letterSpacing = 0.02;
     const colorRed = "#A52A2A";
-    const colorYellow = "#efbf04";
+    const colorYellow = "#EFBF04";
 
     return (
         <group
@@ -34,8 +34,8 @@ export const InfoText = ({ children, isSub }: InfoTextType) => {
                 position={[0, 0, 0]}
                 letterSpacing={0.02}
                 color={colorYellow}
-                outlineWidth={0.1}
-                outlineColor="white"
+                // outlineWidth={0.1}
+                // outlineColor="white"
             >
                 {children}
             </Text >

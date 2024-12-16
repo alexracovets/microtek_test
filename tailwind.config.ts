@@ -21,8 +21,8 @@ const config: Config = {
         regal_black: "#1C1C1C",
         regal_half_black: "#2B2B2B",
         regal_white: "#FFFFFF",
-        regal_red: "#B3321E",
-        regal_yellow: "#efbf04"
+        regal_red: "#A52A2A",
+        regal_yellow: "#EFBF04"
       },
     },
   },

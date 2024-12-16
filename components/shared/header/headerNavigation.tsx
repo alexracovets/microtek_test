@@ -63,20 +63,22 @@ export const HeaderNavigation = () => {
 
     return (
         <>
-            <ul
-                ref={menuRef}
-                onPointerLeave={handleMouseLeave}
-                className="flex justify-start items-center font-tektur gap-x-[1rem] menu_links uppercase text-[3.5rem] tracking-[.2rem] select-none"
-            >
-                {
-                    links.map((link, idx) => {
-                        return (
-                            <HeaderNavigationLink key={idx} link={link} handleMouseEnter={handleMouseEnter} />
-                        )
-                    })
-                }
-            </ul>
-            <HeaderNavigationDash styles={lineStyles} />
+            <div>
+                <ul
+                    ref={menuRef}
+                    onPointerLeave={handleMouseLeave}
+                    className="flex justify-start items-center font-tektur gap-x-[1rem] menu_links uppercase text-[3.5rem] tracking-[.2rem] select-none"
+                >
+                    {
+                        links.map((link, idx) => {
+                            return (
+                                <HeaderNavigationLink key={idx} link={link} handleMouseEnter={handleMouseEnter} />
+                            )
+                        })
+                    }
+                </ul>
+                <HeaderNavigationDash styles={lineStyles} />
+            </div>
         </>
     )
 }

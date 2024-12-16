@@ -1,10 +1,10 @@
 export const Logo = () => {
-    const colorRed = "#B3321E";
-    const colorYellow = "#ffc822";
+    const colorRed = "#A52A2A";
+    const colorYellow = "#EFBF04";
 
     return (
         <div
-            className="w-[8rem] sepia-[.1]"
+            className="w-[8rem]"
         >
             <svg width="100%" height="100%" viewBox="0 0 1536 1032.5" xmlns="http://www.w3.org/2000/svg">
                 <g transform="matrix(1.104242, 0, 0, 1.104242, -79.50541, -334.568151)">
