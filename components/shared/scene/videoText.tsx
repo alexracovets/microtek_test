@@ -28,12 +28,12 @@ export const VideoText = () => {
     useEffect(() => {
         const updateFontSize = () => {
             if (typeof window !== "undefined") {
-                const mainSize = 4;
-                const supSize = 1;
-                const subSize = 1;
+                const mainSize = 40;
+                const supSize = 10;
+                const subSize = 10;
 
                 const calcSize = (size: number) => {
-                    return (window.innerWidth / 1440) * 10 * size;
+                    return size;
                 };
 
                 setFontSize({
@@ -62,14 +62,22 @@ export const VideoText = () => {
             <Text
                 font={fontsTest}
                 fontSize={fontSize.sup}
+                position={[0.3, fontSize.sup * 2.5 + 0.2, -0.01]}
+                letterSpacing={fontSize.sup / 1000}
+                color={"#ffc822"}
+            >
+                ДЕРЖАВНЕ ПІДПРИЄМСТВО
+            </Text >
+            <Text
+                font={fontsTest}
+                fontSize={fontSize.sup}
                 position={[0, fontSize.sup * 2.5, 0]}
                 letterSpacing={fontSize.sup / 1000}
                 color={"#B3321E"}
             >
                 ДЕРЖАВНЕ ПІДПРИЄМСТВО
-            </Text>
+            </Text >
 
-            {/* Текст для обводки */}
             <Text
                 font={fontsChakraPetch}
                 fontSize={fontSize.main}
@@ -79,20 +87,19 @@ export const VideoText = () => {
                 outlineColor="white"
             >
                 MICROTEK
-            </Text>
-
-            {/* Основний текст */}
-            <Text
-                font={fontsChakraPetch}
-                fontSize={fontSize.main}
-                position={[0, 0, 0]}
-            >
-                MICROTEK
                 <meshBasicMaterial toneMapped={false}>
                     <videoTexture attach="map" args={[video]} />
                 </meshBasicMaterial>
             </Text>
-
+            <Text
+                font={fontsTest}
+                fontSize={fontSize.sub}
+                position={[0.3, -fontSize.sub * 2.5 + 0.2, -0.01]}
+                letterSpacing={fontSize.sub / 1000}
+                color={"#B3321E"}
+            >
+                БАЗОВИЙ ЦЕНТР КРИТИЧНИХ ТЕХНОЛОГІЙ
+            </Text >
             <Text
                 font={fontsTest}
                 fontSize={fontSize.sub}

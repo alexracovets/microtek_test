@@ -30,7 +30,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         }
       >
         <Header />
-        <main className='flex-grow flex justify-center items-center'>
+        <main className='flex-grow flex justify-center items-center max-h-full relative overflow-hidden'>
           {children}
         </main>
         <Footer />
