@@ -1,3 +1,5 @@
+"use client";
+
 import { Text } from "@react-three/drei";
 import { useEffect, useState } from "react";
 
@@ -25,25 +27,34 @@ export const VideoText = () => {
 
     useEffect(() => {
         const updateFontSize = () => {
-            const mainSize = 6;
-            const supSize = 2;
-            const subSize = 1.6;
-
-            const calcSize = (size: number) => {
-                return (window.innerWidth / 1440) * 10 * size
+            if (typeof window !== "undefined") {
+                const mainSize = 6;
+                const supSize = 2;
+                const subSize = 1.6;
+    
+                const calcSize = (size: number) => {
+                    return (window.innerWidth / 1440) * 10 * size;
+                };
+    
+                setFontSize({
+                    main: calcSize(mainSize),
+                    sup: calcSize(supSize),
+                    sub: calcSize(subSize),
+                });
             }
-
-            setFontSize({
-                main: calcSize(mainSize),
-                sup: calcSize(supSize),
-                sub: calcSize(subSize),
-            });
         };
-
+    
         updateFontSize();
-
-        window.addEventListener("resize", updateFontSize);
-        return () => window.removeEventListener("resize", updateFontSize);
+    
+        if (typeof window !== "undefined") {
+            window.addEventListener("resize", updateFontSize);
+        }
+    
+        return () => {
+            if (typeof window !== "undefined") {
+                window.removeEventListener("resize", updateFontSize);
+            }
+        };
     }, []);
 
     return (
@@ -53,6 +64,7 @@ export const VideoText = () => {
                 fontSize={fontSize.sup}
                 position={[0, fontSize.sup * 2, 0]}
                 letterSpacing={fontSize.sup / 1000}
+                color={"#B3321E"}
             >
                 ДЕРЖАВНЕ ПІДПРИЄМСТВО
             </Text>
