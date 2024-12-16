@@ -24,7 +24,7 @@ export const HeaderNavigation = () => {
 
     return (
         <ul
-            className="flex justify-start items-center font-tektur gap-x-[1rem] menu_links uppercase text-[3.5rem] tracking-[.2rem]"
+            className="flex justify-start items-center font-tektur gap-x-[1rem] menu_links uppercase text-[3.5rem] tracking-[.2rem] select-none"
         >
             {
                 links.map((link, idx) => {
