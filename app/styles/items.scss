@@ -13,8 +13,8 @@
     }
 
     &::before {
-      position: absolute;
       content: attr(data-text);
+      position: absolute;
       left: 0;
       top: 0;
       width: 100%;

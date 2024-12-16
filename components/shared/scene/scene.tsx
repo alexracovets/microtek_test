@@ -5,6 +5,7 @@ import { NoToneMapping } from "three";
 import { Suspense } from "react";
 
 import { VideoText } from "@/components/shared/scene/videoText";
+import { Smoke } from "./smoke";
 
 const Scene = () => {
     const devicePixelRatio = typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 2) : 1;
@@ -26,6 +27,7 @@ const Scene = () => {
                     <group position={[0, -1, 0]}>
                         <VideoText />
                     </group>
+                    <Smoke />
                 </Suspense>
             </Canvas>
         </div>
