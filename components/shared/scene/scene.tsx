@@ -1,12 +1,12 @@
 "use client";
 
-import { VideoText } from "@/components/shared/scene/videoText";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
 import { NoToneMapping } from "three";
+import { Suspense } from "react";
+
+import { VideoText } from "@/components/shared/scene/videoText";
 
 const Scene = () => {
-
     const devicePixelRatio = typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 2) : 1;
 
     return (
