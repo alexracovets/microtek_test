@@ -6,8 +6,7 @@ import { InfoText } from "./infoText";
 
 export const VideoText = () => {
 
-    const colorRed = "#A52A2A";
-    const colorYellow = "#efbf04";
+    const colorRed = "#A52A2A"; 
 
     const [video] = useState(() =>
         Object.assign(document.createElement('video'), {
