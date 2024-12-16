@@ -4,6 +4,8 @@ import { Text } from "@react-three/drei";
 import { useEffect } from "react";
 
 import { useContentStore } from "@/store/useContentStore";
+import useHeader from "@/store/useHeader";
+
 import { InfoText } from "@/components/shared/scene";
 
 export const VideoText = () => {
@@ -11,12 +13,14 @@ export const VideoText = () => {
     const colorRed = "#A52A2A";
     const { video } = useContentStore();
 
+    const currentPage = useHeader(store => store.currentPage);
+
     useEffect(() => {
         video.play();
     }, [video]);
 
     return (
-        <group>
+        <mesh visible={currentPage === "main"}>
             <InfoText isSub={false}>
                 ДЕРЖАВНЕ ПІДПРИЄМСТВО
             </InfoText>
@@ -37,6 +41,6 @@ export const VideoText = () => {
             <InfoText isSub={true}>
                 БАЗОВИЙ ЦЕНТР КРИТИЧНИХ ТЕХНОЛОГІЙ
             </InfoText>
-        </group>
+        </mesh>
     );
 };

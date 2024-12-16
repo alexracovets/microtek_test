@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   description: "Microtek",
 };
 
+import dynamic from 'next/dynamic';
+
+const Scene = dynamic(() => import('@/components/shared/scene/scene'), {
+  ssr: false,
+});
+
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
@@ -34,6 +40,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           {children}
         </main>
         <Footer />
+        <Scene />
       </body>
     </html>
   );

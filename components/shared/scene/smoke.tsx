@@ -24,15 +24,16 @@ export const Smoke = () => {
                     position={[
                         Math.random() * 500 - 250,
                         Math.random() * 500 - 250,
-                        Math.random() * 1000 - 1000,
+                        Math.random() * 50 - 95,
                     ]}
                     rotation={[0, 0, Math.random() * 2 * Math.PI]}
                 >
-                    <planeGeometry args={[300, 300]} />
+                    <planeGeometry args={[200, 200]} />
                     <meshLambertMaterial
                         map={texture}
                         depthWrite={false}
                         color={new Color("rgb(83, 84, 255)")}
+                        opacity={.9}
                         transparent
                     />
                 </mesh>
