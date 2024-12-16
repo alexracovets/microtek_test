@@ -10,8 +10,6 @@ export const Header = () => {
                 className="flex justify-between items-center py-[2rem]"
             >
                 <Logo />
-
-                
                 <nav>
                     <HeaderNavigation />
                 </nav>

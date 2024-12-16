@@ -5,16 +5,20 @@ export const HeaderNavigation = () => {
 
     const links = [
         {
-            name: "Головна"
+            name: "Головна",
+            route: "/"
         },
         {
-            name: "Продукція"
+            name: "Продукція",
+            route: "/product"
         },
         {
-            name: "Про нас"
+            name: "Про нас",
+            route: "/about"
         },
         {
-            name: "Контакти"
+            name: "Контакти",
+            route: "/contact"
         }
     ]
 
@@ -32,7 +36,7 @@ export const HeaderNavigation = () => {
                             )}
                         >
                             <Link
-                                href={'/'}
+                                href={link.route}
                                 className={cn(
                                     "relative inline-block p-[1rem] text-transparent",
                                     "before:absolute before:content-[attr(data-text)] before:left-0 before:top-0 before:w-full before:h-full",

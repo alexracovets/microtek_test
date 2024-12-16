@@ -2,8 +2,13 @@
 
 import { Text } from "@react-three/drei";
 import { useEffect, useState } from "react";
+import { InfoText } from "./infoText";
 
 export const VideoText = () => {
+
+    const colorRed = "#A52A2A";
+    const colorYellow = "#efbf04";
+
     const [video] = useState(() =>
         Object.assign(document.createElement('video'), {
             src: '/drei.mp4',
@@ -59,31 +64,16 @@ export const VideoText = () => {
 
     return (
         <>
-            <Text
-                font={fontsTest}
-                fontSize={fontSize.sup}
-                position={[0.3, fontSize.sup * 2.5 + 0.2, -0.01]}
-                letterSpacing={fontSize.sup / 1000}
-                color={"#ffc822"}
-            >
+            <InfoText isSub={false}>
                 ДЕРЖАВНЕ ПІДПРИЄМСТВО
-            </Text >
-            <Text
-                font={fontsTest}
-                fontSize={fontSize.sup}
-                position={[0, fontSize.sup * 2.5, 0]}
-                letterSpacing={fontSize.sup / 1000}
-                color={"#B3321E"}
-            >
-                ДЕРЖАВНЕ ПІДПРИЄМСТВО
-            </Text >
-
+            </InfoText>
             <Text
                 font={fontsChakraPetch}
                 fontSize={fontSize.main}
+                outlineWidth={0.5}
                 position={[0, 0, 0]}
+                letterSpacing={-0.02}
                 color="white"
-                outlineWidth={fontSize.main / 100}
                 outlineColor="white"
             >
                 MICROTEK
@@ -91,24 +81,9 @@ export const VideoText = () => {
                     <videoTexture attach="map" args={[video]} />
                 </meshBasicMaterial>
             </Text>
-            <Text
-                font={fontsTest}
-                fontSize={fontSize.sub}
-                position={[0.3, -fontSize.sub * 2.5 + 0.2, -0.01]}
-                letterSpacing={fontSize.sub / 1000}
-                color={"#B3321E"}
-            >
+            <InfoText isSub={true}>
                 БАЗОВИЙ ЦЕНТР КРИТИЧНИХ ТЕХНОЛОГІЙ
-            </Text >
-            <Text
-                font={fontsTest}
-                fontSize={fontSize.sub}
-                position={[0, -fontSize.sub * 2.5, 0]}
-                letterSpacing={fontSize.sub / 1000}
-                color={"#ffc822"}
-            >
-                БАЗОВИЙ ЦЕНТР КРИТИЧНИХ ТЕХНОЛОГІЙ
-            </Text >
+            </InfoText>
         </>
     );
 };
