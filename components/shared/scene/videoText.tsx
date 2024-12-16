@@ -10,7 +10,7 @@ export const VideoText = () => {
             muted: true,
         })
     );
-
+    const fontsChakraPetch = "/fonts/ChakraPetch-Bold.ttf";
     const [fontSize, setFontSize] = useState(0.1);
 
     useEffect(() => {
@@ -31,11 +31,19 @@ export const VideoText = () => {
 
     return (
         <>
+            <Text
+                font={fontsChakraPetch}
+                fontSize={fontSize / 3}
+                position={[0, fontSize / 1.5, 0]}
+            >
+                ДЕРЖАВНЕ ПІДПРИЄМСТВО
+            </Text>
+
             {/* Текст для обводки */}
             <Text
-                font="/fonts/ChakraPetch-Bold.ttf"
+                font={fontsChakraPetch}
                 fontSize={fontSize}
-                position={[0, 1.3, -2]}
+                position={[0, 0, 0]}
                 color="white"
                 outlineWidth={0.4}
                 outlineColor="white"
@@ -45,9 +53,9 @@ export const VideoText = () => {
 
             {/* Основний текст */}
             <Text
-                font="/fonts/ChakraPetch-Bold.ttf"
+                font={fontsChakraPetch}
                 fontSize={fontSize}
-                position={[0, 1.3, -2]}
+                position={[0, 0, 0]}
             >
                 MICROTEK
                 <meshBasicMaterial toneMapped={false}>
