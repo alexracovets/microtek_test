@@ -25,7 +25,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <body
         className={cn(
           `${tektur.variable} antialiased bg-regal_black`,
-          "flex flex-col h-[100dvh] max-h-[100dvh] w-full relative"
+          "flex flex-col min-h-[100dvh] w-full relative"
         )
         }
       >
