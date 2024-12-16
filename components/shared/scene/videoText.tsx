@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { InfoText } from "./infoText";
 
 export const VideoText = () => {
-
-    const colorRed = "#A52A2A"; 
+    const fontsChakraPetch = "/fonts/ChakraPetch-Bold.ttf";
+    const colorRed = "#A52A2A";
 
     const [video] = useState(() =>
         Object.assign(document.createElement('video'), {
@@ -16,49 +16,10 @@ export const VideoText = () => {
             muted: true,
         })
     );
-    const fontsChakraPetch = "/fonts/ChakraPetch-Bold.ttf";
-
-    const [fontSize, setFontSize] = useState({
-        main: 0,
-        sup: 0,
-        sub: 0,
-    });
 
     useEffect(() => {
         video.play();
     }, [video]);
-
-    useEffect(() => {
-        const updateFontSize = () => {
-            if (typeof window !== "undefined") {
-                const mainSize = 40;
-                const supSize = 10;
-                const subSize = 10;
-
-                const calcSize = (size: number) => {
-                    return size;
-                };
-
-                setFontSize({
-                    main: calcSize(mainSize),
-                    sup: calcSize(supSize),
-                    sub: calcSize(subSize),
-                });
-            }
-        };
-
-        updateFontSize();
-
-        if (typeof window !== "undefined") {
-            window.addEventListener("resize", updateFontSize);
-        }
-
-        return () => {
-            if (typeof window !== "undefined") {
-                window.removeEventListener("resize", updateFontSize);
-            }
-        };
-    }, []);
 
     return (
         <>
@@ -67,7 +28,7 @@ export const VideoText = () => {
             </InfoText>
             <Text
                 font={fontsChakraPetch}
-                fontSize={fontSize.main}
+                fontSize={40}
                 outlineWidth={.5}
                 position={[0, 0, 0]}
                 letterSpacing={-0.02}
