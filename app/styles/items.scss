@@ -1,19 +1,19 @@
 .menu_links {
   a {
-    text-shadow: 0.1rem -0.1rem #ffc82200;
+    text-shadow: 0.1rem -0.1rem #a52a2a00;
     transition: all;
     transition-timing-function: ease-out;
-    transition-duration: 200ms;
+    transition-duration: 300ms;
     will-change: contents;
 
     &:hover {
-      text-shadow: 0.1rem -0.1rem #ffffff54;
+      text-shadow: 0.1rem -0.1rem #A52A2A;
     }
 
     &::before {
       transition: all;
       transition-timing-function: ease-out;
-      transition-duration: 200ms;
+      transition-duration: 300ms;
       will-change: contents;
     }
   }

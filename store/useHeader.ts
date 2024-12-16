@@ -8,7 +8,7 @@ interface PDA_Type {
 
 const useHeader = create<PDA_Type>()(
     immer((set) => ({
-        currentPage: "/",
+        currentPage: "main",
         setCurrentPage: (value) =>
             set((state) => {
                 state.currentPage = value;

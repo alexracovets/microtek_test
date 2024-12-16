@@ -7,7 +7,7 @@ import "./globals.scss";
 import { cn } from '@/lib/utils';
 
 const tektur = Tektur({
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: '--font-tektur',
   style: ['normal'],
   subsets: ['cyrillic'],
