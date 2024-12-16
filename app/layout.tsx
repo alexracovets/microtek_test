@@ -25,12 +25,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <body
         className={cn(
           `${tektur.variable} antialiased bg-regal_black`,
-          "flex flex-col h-[100dvh] max-h-[100dvh] w-full"
+          "flex flex-col h-[100dvh] max-h-[100dvh] w-full relative"
         )
         }
       >
         <Header />
-        <main className='flex-grow flex justify-center items-center max-h-full relative overflow-hidden'>
+        <main className='flex-grow flex justify-center items-center max-h-full overflow-hidden'>
           {children}
         </main>
         <Footer />

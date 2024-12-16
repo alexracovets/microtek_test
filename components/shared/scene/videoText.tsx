@@ -18,7 +18,6 @@ export const VideoText = () => {
         })
     );
     const fontsChakraPetch = "/fonts/ChakraPetch-Bold.ttf";
-    const fontsTest = "/fonts/Tektur_Condensed-Bold.ttf";
 
     const [fontSize, setFontSize] = useState({
         main: 0,
@@ -70,11 +69,11 @@ export const VideoText = () => {
             <Text
                 font={fontsChakraPetch}
                 fontSize={fontSize.main}
-                outlineWidth={0.5}
+                outlineWidth={.5}
                 position={[0, 0, 0]}
                 letterSpacing={-0.02}
-                color="white"
-                outlineColor="white"
+                color={colorRed}
+                outlineColor={"white"}
             >
                 MICROTEK
                 <meshBasicMaterial toneMapped={false}>
