@@ -28,14 +28,14 @@ export const VideoText = () => {
     useEffect(() => {
         const updateFontSize = () => {
             if (typeof window !== "undefined") {
-                const mainSize = 6;
-                const supSize = 2;
-                const subSize = 1.6;
-    
+                const mainSize = 4;
+                const supSize = 1;
+                const subSize = 1;
+
                 const calcSize = (size: number) => {
                     return (window.innerWidth / 1440) * 10 * size;
                 };
-    
+
                 setFontSize({
                     main: calcSize(mainSize),
                     sup: calcSize(supSize),
@@ -43,13 +43,13 @@ export const VideoText = () => {
                 });
             }
         };
-    
+
         updateFontSize();
-    
+
         if (typeof window !== "undefined") {
             window.addEventListener("resize", updateFontSize);
         }
-    
+
         return () => {
             if (typeof window !== "undefined") {
                 window.removeEventListener("resize", updateFontSize);
@@ -62,7 +62,7 @@ export const VideoText = () => {
             <Text
                 font={fontsTest}
                 fontSize={fontSize.sup}
-                position={[0, fontSize.sup * 2, 0]}
+                position={[0, fontSize.sup * 2.5, 0]}
                 letterSpacing={fontSize.sup / 1000}
                 color={"#B3321E"}
             >
@@ -75,7 +75,7 @@ export const VideoText = () => {
                 fontSize={fontSize.main}
                 position={[0, 0, 0]}
                 color="white"
-                outlineWidth={0.4}
+                outlineWidth={fontSize.main / 100}
                 outlineColor="white"
             >
                 MICROTEK
@@ -98,10 +98,10 @@ export const VideoText = () => {
                 fontSize={fontSize.sub}
                 position={[0, -fontSize.sub * 2.5, 0]}
                 letterSpacing={fontSize.sub / 1000}
-                scale={[1.3, 1, 1]}
+                color={"#ffc822"}
             >
                 БАЗОВИЙ ЦЕНТР КРИТИЧНИХ ТЕХНОЛОГІЙ
-            </Text>
+            </Text >
         </>
     );
 };
