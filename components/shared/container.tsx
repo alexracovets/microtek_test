@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils"
 import React from "react"
 
 interface ContainerType {
-    children: React.ReactNode,
-    className: string
+    children?: React.ReactNode,
+    className?: string
 }
 
 export const Container = ({ children, className }: ContainerType) => {

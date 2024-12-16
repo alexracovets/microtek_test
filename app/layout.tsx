@@ -1,9 +1,10 @@
 import { Tektur } from 'next/font/google';
 import type { Metadata } from "next";
 
-import { Header } from "@/components/shared";
+import { Footer, Header } from "@/components/shared";
 
 import "./globals.scss";
+import { cn } from '@/lib/utils';
 
 const tektur = Tektur({
   weight: ["400", "500", "600"],
@@ -22,10 +23,17 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body
-        className={`${tektur.variable} antialiased bg-regal_black`}
+        className={cn(
+          `${tektur.variable} antialiased bg-regal_black`,
+          "flex flex-col h-[100dvh] max-h-[100dvh] w-full"
+        )
+        }
       >
         <Header />
-        {children}
+        <main className='flex-grow'>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

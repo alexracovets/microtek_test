@@ -14,7 +14,7 @@ export const Header = () => {
                     <HeaderNavigation />
                 </nav>
                 <Button variant="link">
-                    Зв'язатись
+                    Зв&apos;язатись
                 </Button>
             </Container>
         </header>
