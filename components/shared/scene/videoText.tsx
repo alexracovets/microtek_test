@@ -11,7 +11,13 @@ export const VideoText = () => {
         })
     );
     const fontsChakraPetch = "/fonts/ChakraPetch-Bold.ttf";
-    const [fontSize, setFontSize] = useState(0.1);
+    const fontsTest = "/fonts/Tektur_Condensed-Bold.ttf";
+
+    const [fontSize, setFontSize] = useState({
+        main: 0,
+        sup: 0,
+        sub: 0,
+    });
 
     useEffect(() => {
         video.play();
@@ -19,8 +25,19 @@ export const VideoText = () => {
 
     useEffect(() => {
         const updateFontSize = () => {
-            const calculatedFontSize = (window.innerWidth / 1440) * 10 * 6;
-            setFontSize(calculatedFontSize);
+            const mainSize = 6;
+            const supSize = 2;
+            const subSize = 1.6;
+
+            const calcSize = (size: number) => {
+                return (window.innerWidth / 1440) * 10 * size
+            }
+
+            setFontSize({
+                main: calcSize(mainSize),
+                sup: calcSize(supSize),
+                sub: calcSize(subSize),
+            });
         };
 
         updateFontSize();
@@ -32,9 +49,10 @@ export const VideoText = () => {
     return (
         <>
             <Text
-                font={fontsChakraPetch}
-                fontSize={fontSize / 3}
-                position={[0, fontSize / 1.5, 0]}
+                font={fontsTest}
+                fontSize={fontSize.sup}
+                position={[0, fontSize.sup * 2, 0]}
+                letterSpacing={fontSize.sup / 1000}
             >
                 ДЕРЖАВНЕ ПІДПРИЄМСТВО
             </Text>
@@ -42,7 +60,7 @@ export const VideoText = () => {
             {/* Текст для обводки */}
             <Text
                 font={fontsChakraPetch}
-                fontSize={fontSize}
+                fontSize={fontSize.main}
                 position={[0, 0, 0]}
                 color="white"
                 outlineWidth={0.4}
@@ -54,13 +72,23 @@ export const VideoText = () => {
             {/* Основний текст */}
             <Text
                 font={fontsChakraPetch}
-                fontSize={fontSize}
+                fontSize={fontSize.main}
                 position={[0, 0, 0]}
             >
                 MICROTEK
                 <meshBasicMaterial toneMapped={false}>
                     <videoTexture attach="map" args={[video]} />
                 </meshBasicMaterial>
+            </Text>
+
+            <Text
+                font={fontsTest}
+                fontSize={fontSize.sub}
+                position={[0, -fontSize.sub * 2.5, 0]}
+                letterSpacing={fontSize.sub / 1000}
+                scale={[1.3, 1, 1]}
+            >
+                БАЗОВИЙ ЦЕНТР КРИТИЧНИХ ТЕХНОЛОГІЙ
             </Text>
         </>
     );
