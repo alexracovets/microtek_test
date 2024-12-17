@@ -12,7 +12,6 @@ const Scene = () => {
 
     return (
         <div className="absolute left-0 top-0 w-full h-full z-[-1]">
-
             <Canvas
                 dpr={devicePixelRatio}
                 gl={{ antialias: true, preserveDrawingBuffer: true, toneMapping: NoToneMapping }}
