@@ -1,5 +1,6 @@
 import { Tektur } from 'next/font/google';
 import type { Metadata } from "next";
+import dynamic from 'next/dynamic';
 
 import { Footer, Header } from "@/components/shared";
 
@@ -18,8 +19,6 @@ export const metadata: Metadata = {
   title: "Microtek",
   description: "Microtek",
 };
-
-import dynamic from 'next/dynamic';
 
 const Scene = dynamic(() => import('@/components/shared/scene/scene'), {
   ssr: false,

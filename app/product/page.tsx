@@ -1,12 +1,16 @@
 "use client";
 
 import { Container } from "@/components/shared";
-import { ProductScene } from "@/components/shared/product/productScene";
+import dynamic from 'next/dynamic';
+
+const ProductScene = dynamic(() => import('@/components/shared/product/productScene'), {
+  ssr: false,
+});
 
 export default function Product() {
   return (
-    <Container>
-      <div className="w-full h-full flex-grow flex-col">
+    <Container className="flex-grow flex">
+      <div className="max-w-[50%] flex flex-grow">
         <ProductScene />
       </div>
     </Container>
